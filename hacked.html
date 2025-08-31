@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚠️ SYSTEM HACKED ⚠️</title>
+  <style>
+    body {
+      background: black;
+      color: limegreen;
+      font-family: monospace;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      text-shadow: 0 0 10px limegreen;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red; }
+      25% { text-shadow: -2px 0 cyan; }
+      50% { text-shadow: 2px 2px magenta; }
+      75% { text-shadow: -2px -2px yellow; }
+      100% { text-shadow: 0 0 limegreen; }
+    }
+
+    #terminal {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      line-height: 1.2em;
+      max-height: 400px;
+      overflow-y: auto;
+      background: #000;
+      padding: 15px;
+      border: 1px solid limegreen;
+      box-shadow: 0 0 20px limegreen;
+      border-radius: 8px;
+    }
+
+    .typed {
+      display: inline;
+    }
+
+    .fake-line {
+      color: #33ff33;
+    }
+
+    .warning {
+      color: #ff4444;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>⚠️ SYSTEM HACKED ⚠️</h1>
+
+<div id="terminal"></div>
+
+<script>
+  const terminal = document.getElementById('terminal');
+
+  const lines = [
+    "Initializing breach...",
+    "Bypassing security protocols...",
+    "Accessing system files...",
+    "ERROR: Firewall detected! Overriding...",
+    "Decrypting user data...",
+    "Injecting payload...",
+    "System control: GAINED",
+    "Launching prank sequence...",
+    "WARNING: Your attention has been compromised!",
+    "You've been fooled! Go study 😈"
+  ];
+
+  let i = 0;
+  
+  function typeLine(line, callback) {
+    let j = 0;
+    const interval = setInterval(() => {
+      terminal.innerHTML += line[j];
+      j++;
+      if (j === line.length) {
+        clearInterval(interval);
+        terminal.innerHTML += '\n';
+        if (callback) callback();
+      }
+    }, 30); 
+  }
+
+  function runLines() {
+    if (i < lines.length) {
+      typeLine(lines[i], () => {
+        i++;
+        runLines();
+      });
+    }
+  }
+
+  runLines();
+
+  
+  setInterval(() => {
+    if (Math.random() > 0.7) {
+      terminal.style.color = Math.random() > 0.5 ? 'limegreen' : '#33ff33';
+    }
+  }, 200);
+</script>
+
+</body>
+</html>
+

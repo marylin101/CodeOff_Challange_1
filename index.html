@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock the Secrets of Youth</title>
+  <script>
+    function checkVolume() {
+      const slider = document.getElementById("volume");
+     
+      if (parseInt(slider.value) === 50) {
+        window.location.href = "puzzle.html"; 
+      } else {
+        alert("Nope, not 50 yet! 😏");
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      color: darkred;
+      text-transform: uppercase;
+    }
+    .warning {
+      color: crimson;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+      #tempt-button {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: crimson;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: glow 1.5s infinite alternate;
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 5px red; }
+    to { box-shadow: 0 0 20px gold; }
+  }
+  </style>
+</head>
+<body>
+  <h1>Unlock the Secrets of Youth</h1>
+  <p class="warning"> Proceed at your own risk </p>
+
+  <p>Set the volume to 50 to continue:</p>
+  <input type="range" id="volume" min="0" max="100" value="0">
+  <span id="volume-value">0</span>
+
+  <p class="warning">I am not kidding... DO NOT press the button! 🚫</p>
+ <button id="tempt-button" onclick="checkVolume()">UNLOCK</button>
+
+<script>
+  const slider = document.getElementById("volume");
+  const output = document.getElementById("volume-value");
+  const temptButton = document.getElementById("tempt-button");
+
+
+  const offset = Math.floor(Math.random() * 10) - 5; // random -5 to +4
+
+  slider.oninput = function() {
+    //shows value+offset
+    output.textContent = parseInt(this.value) + offset;
+  };
+
+  
+
+  
+  temptButton.addEventListener("mouseover", () => {
+    temptButton.style.transform = "scale(1.1)";
+    temptButton.style.background = "linear-gradient(90deg, gold, red)";
+    temptButton.style.color = "white";
+  });
+
+  temptButton.addEventListener("mouseout", () => {
+    temptButton.style.transform = "scale(1)";
+    temptButton.style.background = "";
+    temptButton.style.color = "";
+  });
+</script>
+
+</body>
+</html>
